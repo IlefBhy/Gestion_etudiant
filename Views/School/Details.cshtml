@@ -1,0 +1,13 @@
+@model Gestion_etudiant.Models.School
+
+<h2>Détails de l'École</h2>
+
+<p>
+    <strong>Nom : </strong> @Model.SchoolName
+</p>
+<p>
+    <strong>Adresse : </strong> @Model.SchoolAdress
+</p>
+
+<a asp-action="Edit" asp-route-id="@Model.SchoolID" class="btn btn-primary">Modifier</a>
+<a asp-action="Index" class="btn btn-secondary">Retour</a>

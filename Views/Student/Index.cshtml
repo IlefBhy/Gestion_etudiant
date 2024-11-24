@@ -1,0 +1,35 @@
+@model IEnumerable<Gestion_etudiant.Models.Student>
+
+<h2>Liste des Étudiants</h2>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Nom de l'étudiant</th>
+            <th>Âge</th>
+            <th>Date de Naissance</th>
+            <th>École</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>@student.StudentName</td>
+                <td>@student.Age</td>
+                <td>@student.BirthDate.ToString("d")</td>
+                <td>@student.School?.SchoolName</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@student.StudentId" class="btn btn-info">Détails</a>
+                    <a asp-action="Edit" asp-route-id="@student.StudentId" class="btn btn-warning">Modifier</a>
+                    <a asp-action="Delete" asp-route-id="@student.StudentId" class="btn btn-danger">Supprimer</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<div>
+    <a asp-action="Create" class="btn btn-primary">Ajouter un nouvel étudiant</a>
+</div>

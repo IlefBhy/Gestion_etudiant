@@ -1,0 +1,11 @@
+@model Gestion_etudiant.Models.School
+
+<h2>Supprimer l'École</h2>
+
+<p>Êtes-vous sûr de vouloir supprimer l'école "@Model.SchoolName" ?</p>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="SchoolID" />
+    <button type="submit" class="btn btn-danger">Supprimer</button>
+    <a asp-action="Index" class="btn btn-secondary">Annuler</a>
+</form>

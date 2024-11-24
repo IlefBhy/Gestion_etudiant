@@ -1,0 +1,17 @@
+@model Gestion_etudiant.Models.School
+
+<h2>Créer une nouvelle École</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label for="SchoolName">Nom de l'école</label>
+        <input type="text" class="form-control" id="SchoolName" name="SchoolName" required />
+    </div>
+
+    <div class="form-group">
+        <label for="SchoolAdress">Adresse de l'école</label>
+        <input type="text" class="form-control" id="SchoolAdress" name="SchoolAdress" required />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Créer</button>
+</form>
